@@ -1,3 +1,27 @@
+
+Sub 调整指定ppt图形()
+    ' 定义变量
+    Dim pptFilePath As String
+    Dim presentation As presentation
+      
+    ' 设置 pptx 文件路径
+    pptFilePath = "/Users/xxx.pptx"
+      
+    ' 打开 pptx 文件
+    Set presentation = Presentations.Open(pptFilePath)
+    
+        复制每页幻灯片
+        批量移动shapes
+        '删除多余形状
+        
+        MsgBox "处理完毕！"
+        
+End Sub
+
+
+
+
+
 Sub 组合特定幻灯片中的shapes()
 
     Set myDocument = Application.ActivePresentation.Slides(6)
@@ -77,6 +101,8 @@ For i = 1 To sn * 2 Step 2
 
 Next
 
+'MsgBox "复制处理完毕！"
+
 End Sub
 
 
@@ -112,10 +138,12 @@ For i = 1 To sn
     
 Next
 
+'MsgBox "移动处理完毕！"
+
 End Sub
 
 
-Sub 删除形状()
+Sub 删除多余形状()
 
 sn = Application.ActivePresentation.Slides.Count
 Debug.Print sn
@@ -147,6 +175,8 @@ For i = 1 To sn
         End If
 
 Next
+
+MsgBox "处理完毕！"
 
 End Sub
 
