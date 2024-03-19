@@ -142,3 +142,24 @@ End Sub
 
 
 
+
+Sub 合并PPT()
+
+    Dim objPPT As PowerPoint.Application
+    Dim objPresentation As PowerPoint.presentation
+    Dim strFile As String, strFolder As String
+    strFolder = "/Users/xxx" '设置需要合并的PPT文件所在文件夹路径
+    Set objPPT = New PowerPoint.Application
+    Set objPresentation = objPPT.Presentations.Add(msoTrue)
+    strFile = Dir(strFolder & "/*.pptx") '遍历文件夹中的所有PPT文件
+
+    Do While strFile <> ""
+        objPresentation.Slides.InsertFromFile strFolder & "/" & strFile, objPresentation.Slides.Count
+        strFile = Dir()
+    Loop
+    objPresentation.SaveAs "/Users/wangguo/python/PPT/PPT标准化/hb/hb.pptx", ppSaveAsOpenXMLPresentation '保存合并后的文件
+
+End Sub
+
+
+
