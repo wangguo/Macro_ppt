@@ -157,7 +157,7 @@ Sub 合并PPT()
         objPresentation.Slides.InsertFromFile strFolder & "/" & strFile, objPresentation.Slides.Count
         strFile = Dir()
     Loop
-    objPresentation.SaveAs "/Users/wangguo/python/PPT/PPT标准化/hb/hb.pptx", ppSaveAsOpenXMLPresentation '保存合并后的文件
+    objPresentation.SaveAs "/Users/xxx/hb.pptx", ppSaveAsOpenXMLPresentation '保存合并后的文件
 
 End Sub
 
